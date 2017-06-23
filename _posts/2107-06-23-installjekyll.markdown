@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  " installJekyll"
+title:  " ubuntu 16.04安装jekyll 构建个人博客"
 date:   2017-06-23 14:01:51 +0800
 ---
 
@@ -258,6 +258,7 @@ deploy@VM-155-46-ubuntu:~$ rvm use ruby-2.4.0 --default
 Using /home/deploy/.rvm/gems/ruby-2.4.0
 deploy@VM-155-46-ubuntu:~$ ruby -v
 ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+
 ```
 
 
