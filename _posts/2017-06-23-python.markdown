@@ -1,13 +1,40 @@
 ---
 layout: post
 title:  " python环境的准备"
-date:   2017-06-23 14:08:51 +0800
+date:   2017-06-23 14:14:51 +0800
 ---
 
+python环境的准备
+===========
 
+### Content
 
+* 前言
+    - pyenv与 virtualenv 是什么 
+* 安装
+    - pyenv
+    - virtualenv
+* 使用
+    - 快速上手, 基本用法
+    - 安装python版本
+    - 创建环境, 一个具体的场景
+    - 自由切换
+    - 其他用法, local global等方式
+* 总结
+    - pyenv命令
+    - vitualenv命令
+* 其他
+    - 问题 下载python中断(网络故障)
+    - pip安装太慢
+* 参考文献
+    - [用pyenv和virtualenv搭建单机多版本python虚拟开发环境](http://www.it165.net/pro/html/201405/13603.html#/repo)
+    - [Python多版本切换工具-Pyenv\virtualenv及Anaconda科学计算环境的配置](https://segmentfault.com/a/1190000004020387#/repo)
+    - [Python 多版本共存之 pyenv](http://seisman.info/python-pyenv.html#/repo)
+    - [使用 pyenv 可以在一个系统中安装多个python版本](http://www.jianshu.com/p/a23448208d9a#/repo)
+    - [pyenv](http://www.jianshu.com/p/bcb3f1be9073#/repo)
+    - 
 
-## 前言
+# 前言
 
 ### Python 版本管理工具 pyenv与Python 虚拟环境virtualenv
 
@@ -54,9 +81,9 @@ virtualenv：管理Python虚拟环境（相当于一个独立的版本。）
     
 
 
-   pyenv的地址：https://github.com/yyuu/pyenv
-   pyenv-installer的地址：https://github.com/yyuu/pyenv-installer
-   pyenv-installer:安装pyenv的
+   * pyenv的地址：https://github.com/yyuu/pyenv
+   * pyenv-installer的地址：https://github.com/yyuu/pyenv-installer
+   * pyenv-installer:安装pyenv的
     
 
 
@@ -78,7 +105,8 @@ virtualenv：管理Python虚拟环境（相当于一个独立的版本。）
 
 
 ###安装pyenv
-	curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+```	
+curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
 
 
 
@@ -86,72 +114,37 @@ virtualenv：管理Python虚拟环境（相当于一个独立的版本。）
 
 
 	
-		pyone@VM-155-46-ubuntu:~$ curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
-		  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-		                                 Dload  Upload   Total   Spent    Left  Speed
-		100  2099  100  2099    0     0   2199      0 --:--:-- --:--:-- --:--:--  2200
-		Cloning into '/home/pyone/.pyenv'...
-		remote: Counting objects: 578, done.
-		remote: Compressing objects: 100% (440/440), done.
-		remote: Total 578 (delta 234), reused 258 (delta 49), pack-reused 0
-		Receiving objects: 100% (578/578), 253.53 KiB | 0 bytes/s, done.
-		Resolving deltas: 100% (234/234), done.
-		Checking connectivity... done.
-		Cloning into '/home/pyone/.pyenv/plugins/pyenv-doctor'...
-		remote: Counting objects: 11, done.
-		remote: Compressing objects: 100% (8/8), done.
-		remote: Total 11 (delta 1), reused 6 (delta 1), pack-reused 0
-		Unpacking objects: 100% (11/11), done.
-		Checking connectivity... done.
-		Cloning into '/home/pyone/.pyenv/plugins/pyenv-installer'...
-		remote: Counting objects: 17, done.
-		remote: Compressing objects: 100% (15/15), done.
-		remote: Total 17 (delta 2), reused 10 (delta 0), pack-reused 0
-		Unpacking objects: 100% (17/17), done.
-		Checking connectivity... done.
-		Cloning into '/home/pyone/.pyenv/plugins/pyenv-update'...
-		remote: Counting objects: 7, done.
-		remote: Compressing objects: 100% (4/4), done.
-		remote: Total 7 (delta 1), reused 5 (delta 1), pack-reused 0
-		Unpacking objects: 100% (7/7), done.
-		Checking connectivity... done.
-		Cloning into '/home/pyone/.pyenv/plugins/pyenv-virtualenv'...
-		remote: Counting objects: 54, done.
-		remote: Compressing objects: 100% (48/48), done.
-		remote: Total 54 (delta 11), reused 17 (delta 0), pack-reused 0
-		Unpacking objects: 100% (54/54), done.
-		Checking connectivity... done.
-		Cloning into '/home/pyone/.pyenv/plugins/pyenv-which-ext'...
-		remote: Counting objects: 10, done.
-		remote: Compressing objects: 100% (6/6), done.
-		remote: Total 10 (delta 1), reused 5 (delta 0), pack-reused 0
-		Unpacking objects: 100% (10/10), done.
-		Checking connectivity... done.
-		
-		WARNING: seems you still have not added 'pyenv' to the load path.
-		
-		# Load pyenv automatically by adding
-		# the following to ~/.bash_profile:
-		
-		export PATH="/home/pyone/.pyenv/bin:$PATH"
-		eval "$(pyenv init -)"
-		eval "$(pyenv virtualenv-init -)"
+pyone@VM-155-46-ubuntu:~$ curl -L https://raw.githubusercontent.com/yyuu/pyenv-installer/master/bin/pyenv-installer | bash
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                         Dload  Upload   Total   Spent    Left  Speed
+100  2099  100  2099    0     0   2199      0 --:--:-- --:--:-- --:--:--  2200
+部分省略
 
+WARNING: seems you still have not added 'pyenv' to the load path.
+
+# Load pyenv automatically by adding
+# the following to ~/.bash_profile:
+
+export PATH="/home/pyone/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+```
 
 
 安装完成后，根据提示将如下语句加入到 ~/.bashrc 中:
 
 
+```
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"   # 这句可以不加
 
-	export PYENV_ROOT="$HOME/.pyenv"
-	export PATH="$PYENV_ROOT/bin:$PATH"
-	eval "$(pyenv init -)"
-	eval "$(pyenv virtualenv-init -)"   # 这句可以不加
 
-
-	pyone@VM-155-46-ubuntu:~$ vim ~/.bash_profile
-	pyone@VM-155-46-ubuntu:~$ source ~/.bash_profile 
-
+pyone@VM-155-46-ubuntu:~$ vim ~/.bash_profile
+pyone@VM-155-46-ubuntu:~$ source ~/.bash_profile 
+```
 
 
 ###查看pyenv相关的
@@ -166,88 +159,14 @@ virtualenv：管理Python虚拟环境（相当于一个独立的版本。）
 ###查看可安装的Python版本
 
 	pyone@VM-155-46-ubuntu:~$ pyenv install --list|less
-
 	Available versions:
 	  2.1.3
-	  2.2.3
-	  2.3.7
-	  2.4
-	  2.4.1
-	  2.4.2
-	  2.4.3
-	  2.4.4
-	  2.4.5
-	  2.4.6
-	  2.5
-	  2.5.1
-	  2.5.2
-	  2.5.3
-	  2.5.4
-	  2.5.5
-	  2.5.6
-	  2.6.6
-	  2.6.7
-	  2.6.8
-	  2.6.9
-	  2.7-dev
-	  2.7
-	  2.7.1
-	  2.7.2
-	  2.7.3
-	  2.7.4
-	  2.7.5
-	  2.7.6
-	  2.7.7
-	  2.7.8
-	  2.7.9
+       部分省略
 	  2.7.10
 	  2.7.11
 	  2.7.12
-	  2.7.13
-	  3.0.1
-	  3.1
-	  3.1.1
-	  3.1.2
-	  3.1.3
-	  3.1.4
-	  3.1.5
-	  3.2-dev
-	  3.2
-	  3.2.1
-	  3.2.2
-	  3.2.3
-	  3.2.4
-	  3.2.5
-	  3.2.6
-	  3.3.0
-	  3.3-dev
-	  3.3.1
-	  3.3.2
-	  3.3.3
-	  3.3.4
-	  3.3.5
-	  3.3.6
-	  3.4.0
-	  3.4-dev
-	  3.4.1
-	  3.4.2
-	  3.4.3
-	  3.4.4
-	  3.4.5
-	  3.4.6
-	  3.5.0
-	  3.5-dev
-	  3.5.1
 	  3.5.2
-	  3.5.3
-	  3.6.0
-	  3.6-dev
-	  3.6.1
-	  3.6.2rc1
-	  3.7-dev
-	  anaconda-1.4.0
-	  anaconda-1.5.0
-	  anaconda-1.5.1
+
       
 
 
@@ -264,7 +183,7 @@ virtualenv：管理Python虚拟环境（相当于一个独立的版本。）
 	sudo apt-get install gcc libbz2-dev libssl-dev libreadline6 libreadline6-dev libsqlite3-dev
 	
 
-####用pyenv安装  Python2.7.11和 Python3.5.2
+#### 用pyenv安装  Python2.7.11和 Python3.5.2
 
 然后再执行安装
 
@@ -275,7 +194,7 @@ virtualenv：管理Python虚拟环境（相当于一个独立的版本。）
 
 
 
-##pyenv virtualenv 的使用
+## pyenv virtualenv 的使用
 
 要想熟练的掌握pyenv virtualenv 的使用，请解决下面的4个问题。
 
@@ -293,78 +212,72 @@ virtualenv：管理Python虚拟环境（相当于一个独立的版本。）
 
 
 
-###pyenv 创建虚拟环境，并且指定Python版本
+### pyenv 创建虚拟环境，并且指定Python版本
 
 		pyenv virtualenv 2.7.11 py2dj -- 创建并且切换之后，我们可以看见python版本已经是2.7.11, 而且是在虚拟环境之中 （py2dj)
 
-###切换到虚拟环境  
+### 切换到虚拟环境  
      
 		pyenv activate py2dj          -- 切换到 py2dj
 
+
+
+
 ### 安装django1.11
+
+
+```
+(py2dj) pyone@VM-155-46-ubuntu:~$ pip install Django==1.11 -i https://pypi.douban.com/simple
+ Collecting Django==1.11
+ Downloading Django-1.11-py2.py3-none-any.whl (6.9MB)
+ 99% |############################### | 6.9MB 27kB/s eta 0:00:02Exception:
+  部分省略
+ flush_decoder = True
+ File "/home/pyone/.pyenv/versions/2.7.11/lib/python2.7/contextlib.py", line 35, in __exit__
+ self.gen.throw(type, value, traceback)
+File "/home/pyone/.pyenv/versions/2.7.11/envs/py2dj/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/response.py", line 246, in _error_catcher
+raise ReadTimeoutError(self._pool, None, 'Read timed out.')
+ReadTimeoutError: HTTPSConnectionPool(host='pypi.python.org', port=443): Read timed out.
+```
+
+
+
+
+
+
 	(py2dj) pyone@VM-155-46-ubuntu:~$ pip install Django==1.11
 	Collecting Django==1.11
-	  Downloading Django-1.11-py2.py3-none-any.whl (6.9MB)
-	    99% |############################### | 6.9MB 27kB/s eta 0:00:02Exception:
-	Traceback (most recent call last):
-	  File "/home/pyone/.pyenv/versions/2.7.11/envs/py2dj/lib/python2.7/site-packages/pip/basecommand.py", line 215, in main
-	    status = self.run(options, args)
-	  File "/home/pyone/.pyenv/versions/2.7.11/envs/py2dj/lib/python2.7/site-packages/pip/commands/install.py", line 335, in run
-	    wb.build(autobuilding=True)
-	  File "/home/pyone/.pyenv/versions/2.7.11/envs/py2dj/lib/python2.7/site-packages/pip/wheel.py", line 749, in build
-	    self.requirement_set.prepare_files(self.finder)
-	  File "/home/pyone/.pyenv/versions/2.7.11/envs/py2dj/lib/python2.7/site-packages/pip/req/req_set.py", line 380, in prepare_files
-	    ignore_dependencies=self.ignore_dependencies))
-	  File "/home/pyone/.pyenv/versions/2.7.11/envs/py2dj/lib/python2.7/site-packages/pip/req/req_set.py", line 620, in _prepare_file
-	    session=self.session, hashes=hashes)
-	  File "/home/pyone/.pyenv/versions/2.7.11/envs/py2dj/lib/python2.7/site-packages/pip/download.py", line 821, in unpack_url
-	    hashes=hashes
-	  File "/home/pyone/.pyenv/versions/2.7.11/envs/py2dj/lib/python2.7/site-packages/pip/download.py", line 659, in unpack_http_url
-	    hashes)
-	  File "/home/pyone/.pyenv/versions/2.7.11/envs/py2dj/lib/python2.7/site-packages/pip/download.py", line 882, in _download_http_url
-	    _download_url(resp, link, content_file, hashes)
-	  File "/home/pyone/.pyenv/versions/2.7.11/envs/py2dj/lib/python2.7/site-packages/pip/download.py", line 603, in _download_url
-	    hashes.check_against_chunks(downloaded_chunks)
-	  File "/home/pyone/.pyenv/versions/2.7.11/envs/py2dj/lib/python2.7/site-packages/pip/utils/hashes.py", line 46, in check_against_chunks
-	    for chunk in chunks:
-	  File "/home/pyone/.pyenv/versions/2.7.11/envs/py2dj/lib/python2.7/site-packages/pip/download.py", line 571, in written_chunks
-	    for chunk in chunks:
-	  File "/home/pyone/.pyenv/versions/2.7.11/envs/py2dj/lib/python2.7/site-packages/pip/utils/ui.py", line 139, in iter
-	    for x in it:
-	  File "/home/pyone/.pyenv/versions/2.7.11/envs/py2dj/lib/python2.7/site-packages/pip/download.py", line 560, in resp_read
-	    decode_content=False):
-	  File "/home/pyone/.pyenv/versions/2.7.11/envs/py2dj/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/response.py", line 357, in stream
-	    data = self.read(amt=amt, decode_content=decode_content)
-	  File "/home/pyone/.pyenv/versions/2.7.11/envs/py2dj/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/response.py", line 324, in read
-	    flush_decoder = True
-	  File "/home/pyone/.pyenv/versions/2.7.11/lib/python2.7/contextlib.py", line 35, in __exit__
-	    self.gen.throw(type, value, traceback)
-	  File "/home/pyone/.pyenv/versions/2.7.11/envs/py2dj/lib/python2.7/site-packages/pip/_vendor/requests/packages/urllib3/response.py", line 246, in _error_catcher
-	    raise ReadTimeoutError(self._pool, None, 'Read timed out.')
-	ReadTimeoutError: HTTPSConnectionPool(host='pypi.python.org', port=443): Read timed out.
-	(py2dj) pyone@VM-155-46-ubuntu:~$ pip install Django==1.11
-	Collecting Django==1.11
-	  Downloading Django-1.11-py2.py3-none-any.whl (6.9MB)
-	    100% |################################| 6.9MB 41kB/s 
+	Downloading Django-1.11-py2.py3-none-any.whl (6.9MB)
+	100% |################################| 6.9MB 41kB/s 
 	Collecting pytz (from Django==1.11)
-	  Downloading pytz-2017.2-py2.py3-none-any.whl (484kB)
-	    100% |################################| 491kB 52kB/s 
+	Downloading pytz-2017.2-py2.py3-none-any.whl (484kB)
+	100% |################################| 491kB 52kB/s 
 	Installing collected packages: pytz, Django
 	Successfully installed Django-1.11 pytz-2017.2
 	(py2dj) pyone@VM-155-46-ubuntu:~$
 
 
-###切回系统环境
-	(py2dj) pyone@VM-155-46-ubuntu:~$ pyenv deactivate   -------切回系统环境
-	pyone@VM-155-46-ubuntu:~$
 
 
-	(py2dj) pyone@VM-155-46-ubuntu:~$ pyenv deactivate
+
+### 切回系统环境
+
+
+```
+(py2dj) pyone@VM-155-46-ubuntu:~$ pyenv deactivate   -------切回系统环境
+pyone@VM-155-46-ubuntu:~$
+```
+
+```
+(py2dj) pyone@VM-155-46-ubuntu:~$ pyenv deactivate
+```
 
 
 
 
 ## python2.7 搭配elasticsearch
+
+
 	pyone@VM-155-46-ubuntu:~$ pyenv virtualenv 2.7.11 py2es
 	New python executable in /home/pyone/.pyenv/versions/2.7.11/envs/py2es/bin/python2.7
 	Also creating executable in /home/pyone/.pyenv/versions/2.7.11/envs/py2es/bin/python
@@ -375,6 +288,7 @@ virtualenv：管理Python虚拟环境（相当于一个独立的版本。）
 
 
 
+
 	pyone@VM-155-46-ubuntu:~$ pyenv activate py2es
 	pyenv-virtualenv: prompt changing will be removed from future release. configure `export PYENV_VIRTUALENV_DISABLE_PROMPT=1' to simulate the behavior.
 	(py2es) pyone@VM-155-46-ubuntu:~$ python
@@ -382,47 +296,22 @@ virtualenv：管理Python虚拟环境（相当于一个独立的版本。）
 	[GCC 5.4.0 20160609] on linux2
 	Type "help", "copyright", "credits" or "license" for more information.
 	Use quit() or Ctrl-D (i.e. EOF) to exit
-	>>> quit()
+	  >>> quit()
+
+
 
 
 	(py2es) pyone@VM-155-46-ubuntu:~$ pip install elasticsearch
 	Collecting elasticsearch
-	  Downloading elasticsearch-5.4.0-py2.py3-none-any.whl (58kB)
-	    100% |################################| 61kB 106kB/s 
+	Downloading elasticsearch-5.4.0-py2.py3-none-any.whl (58kB)
+		    100% |################################| 61kB 106kB/s 
 	Collecting urllib3<2.0,>=1.8 (from elasticsearch)
-	  Downloading urllib3-1.21.1-py2.py3-none-any.whl (131kB)
-	    100% |################################| 133kB 73kB/s 
+		 Downloading urllib3-1.21.1-py2.py3-none-any.whl (131kB)
+		    100% |################################| 133kB 73kB/s 
 	Installing collected packages: urllib3, elasticsearch
 	Successfully installed elasticsearch-5.4.0 urllib3-1.21.1
 	(py2es) pyone@VM-155-46-ubuntu:~$ echo $?
 	0
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
-	
-	
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -531,7 +420,25 @@ pyenv local 版本号
 	  zong_test
 	(zong_000) zong@zong-virtual-machine:~/zong$ pip -V
 	pip 8.1.1 from /home/zong/.pyenv/versions/3.5.2/envs/zong_000/lib/python3.5/site-packages (python 3.5)
-	
+	zong@zong-virtual-machine:~$ mkdir zongl
+	zong@zong-virtual-machine:~$ cd zong
+	zong@zong-virtual-machine:~/zongl$ pyenv virtualenv 3.5.2 zong_
+	zong_000   zong_test  
+	zong@zong-virtual-machine:~/zongl$ pyenv virtualenv 3.5.2 zongl
+	Ignoring indexes: https://pypi.python.org/simple
+	Requirement already satisfied (use --upgrade to upgrade): setuptools in /home/zong/.pyenv/versions/3.5.2/envs/zongl/lib/python3.5/site-packages
+	Requirement already satisfied (use --upgrade to upgrade): pip in /home/zong/.pyenv/versions/3.5.2/envs/zongl/lib/python3.5/site-packages
+	zong@zong-virtual-machine:~/zongl$ ls -la
+	total 12
+	drwxrwxr-x  2 zong zong 4096  9月  9 17:18 .
+	drwxr-xr-x 21 zong zong 4096  9月  9 17:16 ..
+	-rw-rw-r--  1 zong zong    6  9月  9 17:18 .python-version
+	zong@zong-virtual-machine:~/zongl$ pyenv local zong
+	zong_000   zongl      zong_test  
+	zong@zong-virtual-machine:~/zongl$ pyenv local zongl
+	(zongl) zong@zong-virtual-machine:~/zongl$ pyenv version
+	zongl (set by /home/zong/zongl/.python-version)
+
 	
 #### 安装ipython
 
@@ -561,34 +468,6 @@ pyenv local 版本号
 
 
 
-
-
-
-
-
-
-
-
-	zong@zong-virtual-machine:~$ mkdir zongl
-	zong@zong-virtual-machine:~$ cd zong
-	zong@zong-virtual-machine:~/zongl$ pyenv virtualenv 3.5.2 zong_
-	zong_000   zong_test  
-	zong@zong-virtual-machine:~/zongl$ pyenv virtualenv 3.5.2 zongl
-	Ignoring indexes: https://pypi.python.org/simple
-	Requirement already satisfied (use --upgrade to upgrade): setuptools in /home/zong/.pyenv/versions/3.5.2/envs/zongl/lib/python3.5/site-packages
-	Requirement already satisfied (use --upgrade to upgrade): pip in /home/zong/.pyenv/versions/3.5.2/envs/zongl/lib/python3.5/site-packages
-	zong@zong-virtual-machine:~/zongl$ ls -la
-	total 12
-	drwxrwxr-x  2 zong zong 4096  9月  9 17:18 .
-	drwxr-xr-x 21 zong zong 4096  9月  9 17:16 ..
-	-rw-rw-r--  1 zong zong    6  9月  9 17:18 .python-version
-	zong@zong-virtual-machine:~/zongl$ pyenv local zong
-	zong_000   zongl      zong_test  
-	zong@zong-virtual-machine:~/zongl$ pyenv local zongl
-	(zongl) zong@zong-virtual-machine:~/zongl$ pyenv version
-	zongl (set by /home/zong/zongl/.python-version)
-
-
 #### pip配置使用国内镜像
 
 	1.创建目录
@@ -603,5 +482,236 @@ pyenv local 版本号
 	trusted-host = mirrors.aliyun.com
 	
 
+
+
+
+
+
+ubuntu@VM-155-46-ubuntu:~$ sudo adduser deploy
+Adding user `deploy' ...
+Adding new group `deploy' (1002) ...
+Adding new user `deploy' (1002) with group `deploy' ...
+Creating home directory `/home/deploy' ...
+Copying files from `/etc/skel' ...
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+Changing the user information for deploy
+Enter the new value, or press ENTER for the default
+	Full Name []: 
+	Room Number []: 
+	Work Phone []: 
+	Home Phone []: 
+	Other []: 
+Is the information correct? [Y/n] Y
+ubuntu@VM-155-46-ubuntu:~$ sudo usermod -a -G sudo deploy
+ubuntu@VM-155-46-ubuntu:~$ su - deploy 
+Password: 
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+deploy@VM-155-46-ubuntu:~$ exit
+logout
+ubuntu@VM-155-46-ubuntu:~$ sudo su - deploy 
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+deploy@VM-155-46-ubuntu:~$ curl -L get.rvm.io | bash -s stable 
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   194  100   194    0     0     96      0  0:00:02  0:00:02 --:--:--    96
+100 24063  100 24063    0     0   7990      0  0:00:03  0:00:03 --:--:--  166k
+Downloading https://github.com/rvm/rvm/archive/1.29.1.tar.gz
+Downloading https://github.com/rvm/rvm/releases/download/1.29.1/1.29.1.tar.gz.asc
+Found PGP signature at: 'https://github.com/rvm/rvm/releases/download/1.29.1/1.29.1.tar.gz.asc',
+but no GPG software exists to validate it, skipping.
+
+Installing RVM to /home/deploy/.rvm/
+    Adding rvm PATH line to /home/deploy/.profile /home/deploy/.mkshrc /home/deploy/.bashrc /home/deploy/.zshrc.
+    Adding rvm loading line to /home/deploy/.profile /home/deploy/.bash_profile /home/deploy/.zlogin.
+Installation of RVM in /home/deploy/.rvm/ is almost complete:
+
+  * To start using RVM you need to run `source /home/deploy/.rvm/scripts/rvm`
+    in all your open shell windows, in rare cases you need to reopen all shell windows.
+
+# deploy,
+#
+#   Thank you for using RVM!
+#   We sincerely hope that RVM helps to make your life easier and more enjoyable!!!
+#
+# ~Wayne, Michal & team.
+
+In case of problems: https://rvm.io/help and https://twitter.com/rvm_io
+deploy@VM-155-46-ubuntu:~$ echo $?
+0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+deploy@VM-155-46-ubuntu:~$ sudo vim /etc/profile
+[sudo] password for deploy: 
+deploy@VM-155-46-ubuntu:~$ ll /home/deploy/.rvm/scripts/rvm
+-rwxrwxr-x 1 deploy deploy 7663 Jun 22 14:15 /home/deploy/.rvm/scripts/rvm*
+deploy@VM-155-46-ubuntu:~$ sudo vim /etc/profile
+deploy@VM-155-46-ubuntu:~$ ll /home/deploy/.rvm/bin
+total 36
+drwxrwxr-x  2 deploy deploy 4096 Jun 22 14:15 ./
+drwxrwxr-x 25 deploy deploy 4096 Jun 22 14:15 ../
+lrwxrwxrwx  1 deploy deploy    9 Jun 22 14:15 ruby-rvm-env -> rvm-shell*
+-rwxrwxr-x  1 deploy deploy 1534 Jun 22 14:15 rvm*
+-rwxrwxr-x  1 deploy deploy 1799 Jun 22 14:15 rvm-auto-ruby*
+-rwxrwxr-x  1 deploy deploy 2059 Jun 22 14:15 rvm-exec*
+-rwxrwxr-x  1 deploy deploy 3983 Jun 22 14:15 rvm-prompt*
+lrwxrwxrwx  1 deploy deploy   13 Jun 22 14:15 rvm-shebang-ruby -> rvm-auto-ruby*
+-rwxrwxr-x  1 deploy deploy 2224 Jun 22 14:15 rvm-shell*
+-rwxrwxr-x  1 deploy deploy  648 Jun 22 14:15 rvm-smile*
+-rwxrwxr-x  1 deploy deploy 2618 Jun 22 14:15 rvmsudo*
+deploy@VM-155-46-ubuntu:~$ source /etc/profile
+deploy@VM-155-46-ubuntu:~$ rvm list known
+# MRI Rubies
+[ruby-]1.8.6[-p420]
+[ruby-]1.8.7[-head] # security released on head
+[ruby-]1.9.1[-p431]
+[ruby-]1.9.2[-p330]
+[ruby-]1.9.3[-p551]
+[ruby-]2.0.0[-p648]
+[ruby-]2.1[.10]
+[ruby-]2.2[.6]
+[ruby-]2.3[.3]
+[ruby-]2.4[.0]
+ruby-head
+
+# for forks use: rvm install ruby-head-<name> --url https://github.com/github/ruby.git --branch 2.2
+
+# JRuby
+jruby-1.6[.8]
+jruby-1.7[.26]
+jruby[-9.1.7.0]
+jruby-head
+
+# Rubinius
+rbx-1[.4.3]
+rbx-2.3[.0]
+rbx-2.4[.1]
+rbx-2[.5.8]
+rbx[-3.71]
+rbx-head
+
+# Opal
+opal
+
+# Minimalistic ruby implementation - ISO 30170:2012
+mruby-1.0.0
+mruby-1.1.0
+mruby-1[.2.0]
+mruby[-head]
+
+# Ruby Enterprise Edition
+ree-1.8.6
+ree[-1.8.7][-2012.02]
+
+# Topaz
+topaz
+
+# MagLev
+maglev[-head]
+maglev-1.0.0
+
+# Mac OS X Snow Leopard Or Newer
+macruby-0.10
+macruby-0.11
+macruby[-0.12]
+macruby-nightly
+macruby-head
+
+# IronRuby
+ironruby[-1.1.3]
+ironruby-head
+deploy@VM-155-46-ubuntu:~$ ruby -v
+ruby 2.3.1p112 (2016-04-26) [x86_64-linux-gnu]
+deploy@VM-155-46-ubuntu:~$ rvm install ruby-2.4.0
+Searching for binary rubies, this might take some time.
+Found remote file https://rvm_io.global.ssl.fastly.net/binaries/ubuntu/16.04/x86_64/ruby-2.4.0.tar.bz2
+Checking requirements for ubuntu.
+Installing requirements for ubuntu.
+Updating system....
+Installing required packages: libyaml-dev, sqlite3, autoconf, libgdbm-dev, libncurses5-dev, automake, libtool, bison, pkg-config, libffi-dev............
+Requirements installation successful.
+ruby-2.4.0 - #configure
+ruby-2.4.0 - #download
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 16.4M  100 16.4M    0     0  19935      0  0:14:24  0:14:24 --:--:-- 36743
+ruby-2.4.0 - #validate archive
+ruby-2.4.0 - #extract
+ruby-2.4.0 - #validate binary
+ruby-2.4.0 - #setup
+ruby-2.4.0 - #gemset created /home/deploy/.rvm/gems/ruby-2.4.0@global
+ruby-2.4.0 - #importing gemset /home/deploy/.rvm/gemsets/global.gems..............................
+ruby-2.4.0 - #generating global wrappers........
+ruby-2.4.0 - #gemset created /home/deploy/.rvm/gems/ruby-2.4.0
+ruby-2.4.0 - #importing gemsetfile /home/deploy/.rvm/gemsets/default.gems evaluated to empty gem list
+ruby-2.4.0 - #generating default wrappers........
+deploy@VM-155-46-ubuntu:~$ echo $?
+0
+
+
+
+
+
+
+
+
+
+
+
+
+deploy@VM-155-46-ubuntu:~$ rvm gemlist
+Unrecognized command line argument: 'gemlist' ( see: 'rvm usage' )
+deploy@VM-155-46-ubuntu:~$ rvm list
+
+rvm rubies
+
+   ruby-2.4.0 [ x86_64 ]
+
+# Default ruby not set. Try 'rvm alias create default <ruby>'.
+
+# => - current
+# =* - current && default
+#  * - default
+
+
+
+
+deploy@VM-155-46-ubuntu:~$ source /home/deploy/.rvm/scripts/rvm
+deploy@VM-155-46-ubuntu:~$ rvm use ruby-2.4.0 --default 
+Using /home/deploy/.rvm/gems/ruby-2.4.0
+
+
+
+deploy@VM-155-46-ubuntu:~$ ruby -v
+ruby 2.4.0p0 (2016-12-24 revision 57164) [x86_64-linux]
+
+
+
+deploy@VM-155-46-ubuntu:~$ gem sources --remove https://rubygems.org/
+https://rubygems.org/ removed from sources
+deploy@VM-155-46-ubuntu:~$ gem sources --add https://gems.ruby-china.org/
+https://gems.ruby-china.org/ added to sources
 
 
